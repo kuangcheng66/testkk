@@ -1,21 +1,18 @@
 package main
 
 import (
-	"context"
-	"fmt"
-	"github.com/docker/docker/client"
-	"io"
-	"os"
+	"k8s.io/klog/v2"
 )
 
 func main() {
 
-	ctx := context.Background()
-	cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
-	if err != nil {
-		panic(err)
-	}
-	defer cli.Close()
+	klog.Info("successfully...")
+	//ctx := context.Background()
+	//cli, err := client.NewClientWithOpts(client.FromEnv, client.WithAPIVersionNegotiation())
+	//if err != nil {
+	//	panic(err)
+	//}
+	//defer cli.Close()
 
 	// docker images
 	/*images, err := cli.ImageList(ctx, types.ImageListOptions{All: true})
@@ -48,17 +45,17 @@ func main() {
 	}*/
 
 	// docker load -i *.tar.gz
-	tar, err := os.Open("/root/clusterlink-operator-v0.1.5.tar")
-	imageLoadResponse, err := cli.ImageLoad(ctx, tar, true)
-	if err != nil {
-		panic(err)
-	}
-	body, err := io.ReadAll(imageLoadResponse.Body)
-	if err != nil {
-		panic(err)
-	}
-	str := string(body)
-	fmt.Printf("%s", string(str))
+	//tar, err := os.Open("/root/clusterlink-operator-v0.1.5.tar")
+	//imageLoadResponse, err := cli.ImageLoad(ctx, tar, true)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//body, err := io.ReadAll(imageLoadResponse.Body)
+	//if err != nil {
+	//	panic(err)
+	//}
+	//str := string(body)
+	//fmt.Printf("%s", string(str))
 
 	// docker push image
 	/*	authConfig := types.AuthConfig{
