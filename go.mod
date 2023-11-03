@@ -1,4 +1,4 @@
-module testkk
+module github.com/kosmos.io/testkk
 
 go 1.21.0
 
