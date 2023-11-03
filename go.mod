@@ -58,3 +58,7 @@ require (
 	google.golang.org/protobuf v1.29.1 // indirect
 	gotest.tools/v3 v3.0.2 // indirect
 )
+
+replace (
+	go.opentelemetry.io/otel/metric => go.opentelemetry.io/otel/metric v0.31.0
+)
